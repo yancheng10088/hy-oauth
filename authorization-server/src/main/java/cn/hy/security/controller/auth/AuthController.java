@@ -1,4 +1,4 @@
-package cn.hy.security.controller;
+package cn.hy.security.controller.auth;
 
 import cn.hy.security.Service.impl.AuthServiceImpl;
 import cn.hy.security.common.AjaxResult;

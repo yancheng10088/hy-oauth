@@ -1,0 +1,51 @@
+#安全中心
+server:
+  port: 8888
+spring:
+  redis:
+    host: 192.168.8.70
+    port: 8379
+    password: HonsunRedisServer!1Test
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1s
+        min-idle: 0
+        max-idle: 8
+
+
+auth.security:
+  oauth2:
+    storeType: jwt #或者jwt
+    jwtSigningKey: hongyu
+    clients[0]:
+      clientId: 87wss524E9K4joXu
+      clientSecret: c46b5ade4ef39295c9a0af50f7bf5827
+
+
+
+
+logging:
+  level:
+    org.springframework: debug
+
+accessToken.validity.seconds: 7200
+
+
+#资源中心
+auth-server: http://127.0.0.1:8888 # sso-server地址
+security:
+  oauth2:
+    client:
+      client-id: 87wss524E9K4joXu
+      client-secret: c46b5ade4ef39295c9a0af50f7bf5827
+      user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
+      access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
+    resource:
+      jwt:
+        key-uri: ${auth-server}/oauth/token_key
+      user-info-uri: ${auth-server}/user/me
+      token-info-uri: ${auth-server}/oauth/check_token
+
+redirect.gongjiangtu.url: http://192.168.8.70:8065
+redirect.secondOA.url: http://192.168.8.25:8083

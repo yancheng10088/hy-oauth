@@ -13,6 +13,8 @@ import org.springframework.util.LinkedMultiValueMap;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.UUID;
+
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -34,6 +36,13 @@ public class SpringBoot2Oauth2Test {
     final static String USER_INFO_URI = "http://127.0.0.1:" + PORT + "/userRedis";
     //登录地址
     final static String SIGN_IN_URI = "http://127.0.0.1:" + PORT + "/login";
+
+
+    @Test
+    public void createClientInfo() throws Exception {
+        String clientId = "hy"+ UUID.randomUUID().toString().replace("-","");
+        log.info("clientId", clientId);
+    }
 
     @Test
     public void getUserInfo() throws Exception {
