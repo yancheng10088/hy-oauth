@@ -23,9 +23,9 @@ public class SpringBoot2Oauth2Test {
     //端口
     final static long PORT = 8888;
     //clientId
-    final static String CLIENT_ID = "merryyou";
+    final static String CLIENT_ID = "87wss524E9K4joXu";
     //clientSecret
-    final static String CLIENT_SECRET = "merryyou";
+    final static String CLIENT_SECRET = "c46b5ade4ef39295c9a0af50f7bf5827";
     //用户名
     final static String USERNAME = "admin";
     //密码

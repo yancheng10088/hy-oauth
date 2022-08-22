@@ -29,7 +29,7 @@ public class TokenStoreConfig {
      * @return
      */
     @Bean
-    @ConditionalOnProperty(prefix = "merryyou.security.oauth2", name = "storeType", havingValue = "redis")
+    @ConditionalOnProperty(prefix = "auth.security.oauth2", name = "storeType", havingValue = "redis")
     public TokenStore redisTokenStore() {
         return new RedisTokenStore(redisConnectionFactory);
     }
@@ -38,7 +38,7 @@ public class TokenStoreConfig {
      * jwt TOKEN配置信息
      */
     @Configuration
-    @ConditionalOnProperty(prefix = "merryyou.security.oauth2", name = "storeType", havingValue = "jwt", matchIfMissing = true)
+    @ConditionalOnProperty(prefix = "auth.security.oauth2", name = "storeType", havingValue = "jwt", matchIfMissing = true)
     public static class JwtTokenCofnig{
 
         @Autowired

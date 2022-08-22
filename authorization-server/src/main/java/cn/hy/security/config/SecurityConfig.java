@@ -1,6 +1,4 @@
-package cn.hy.security.config;//package cn.merryyou.security.security;
-
-
+package cn.hy.security.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;

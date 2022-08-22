@@ -1,9 +1,11 @@
 package cn.hy.security.controller.resource;
 
+import cn.hy.security.aspect.SysLog;
 import cn.hy.security.common.AjaxResult;
 import cn.hy.security.resource.util.HttpUtil;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +16,7 @@ import java.util.HashMap;
 
 @RestController
 @RequestMapping("/resource/zh")
+@Slf4j
 public class WhZhController {
     @Value("${redirect.gongjiangtu.url}")
     private String gjtUrl ;
@@ -26,6 +29,7 @@ public class WhZhController {
      * @param id 项目id
      * @return
      */
+    @SysLog()
     @RequestMapping(value = "/pushMsgLists/{id}")
     @PreAuthorize("hasRole('ROLE_USER')")
     public AjaxResult pushMsgLists(@PathVariable String id) {
@@ -40,6 +44,7 @@ public class WhZhController {
      * @param id
      * @return
      */
+    @SysLog()
     @RequestMapping(value = "/getProblems/{id}")
     @PreAuthorize("hasRole('ROLE_USER')")
     public AjaxResult getProblems(@PathVariable String id) {
@@ -54,6 +59,7 @@ public class WhZhController {
      * @param id
      * @return
      */
+    @SysLog()
     @RequestMapping(value = "/towerCrane/{id}")
     @PreAuthorize("hasRole('ROLE_USER')")
     public AjaxResult towerCrane(@PathVariable String id) {
@@ -70,6 +76,7 @@ public class WhZhController {
      * @param id
      * @return
      */
+    @SysLog()
     @RequestMapping(value = "/lift/{id}")
     @PreAuthorize("hasRole('ROLE_USER')")
     public AjaxResult lift(@PathVariable String id) {
@@ -87,6 +94,7 @@ public class WhZhController {
      * @param id
      * @return
      */
+    @SysLog()
     @RequestMapping(value = "/special/{id}")
     @PreAuthorize("hasRole('ROLE_USER')")
     public AjaxResult special(@PathVariable String id) {

@@ -7,6 +7,8 @@ package cn.hy.security.utils;
  */
 public class ClientUtil {
     private static String preKey = "HY_OAUTH%@#";
+
+    private static String corpKey = "HY_CLIENT$#%^";
     public static String createClientId(){
         return IdUtils.Guid();
     }

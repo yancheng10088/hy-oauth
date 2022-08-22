@@ -27,7 +27,9 @@ auth.security:
 
 logging:
   level:
-    org.springframework: debug
+    org.springframework: info
+  path: logs
+  file: spring.log
 
 accessToken.validity.seconds: 7200
 

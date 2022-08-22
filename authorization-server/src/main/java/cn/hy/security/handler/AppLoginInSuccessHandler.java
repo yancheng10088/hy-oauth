@@ -26,7 +26,6 @@ import java.util.HashMap;
 /**
  * APP登录成功处理器
  */
-
 @Slf4j
 @Component("appLoginInSuccessHandler")
 public class AppLoginInSuccessHandler extends SavedRequestAwareAuthenticationSuccessHandler {

@@ -13,21 +13,23 @@ spring:
         min-idle: 0
         max-idle: 8
 
+auth.clientId: 87wss524E9K4joXu
+auth.clientSecret: c46b5ade4ef39295c9a0af50f7bf5827
 
 auth.security:
   oauth2:
     storeType: jwt #或者jwt
     jwtSigningKey: hongyu
     clients[0]:
-      clientId: 87wss524E9K4joXu
-      clientSecret: c46b5ade4ef39295c9a0af50f7bf5827
+      clientId: ${auth.clientId}
+      clientSecret: ${auth.clientSecret}
+#
+#logging:
+#  level:
+#    org.springframework: debug
+#  path: logs
 
 
-
-
-logging:
-  level:
-    org.springframework: debug
 
 accessToken.validity.seconds: 7200
 
@@ -37,8 +39,8 @@ auth-server: http://127.0.0.1:8888 # sso-server地址
 security:
   oauth2:
     client:
-      client-id: 87wss524E9K4joXu
-      client-secret: c46b5ade4ef39295c9a0af50f7bf5827
+      client-id: ${auth.clientId}
+      client-secret: ${auth.clientSecret}
       user-authorization-uri: ${auth-server}/oauth/authorize #请求认证的地址
       access-token-uri: ${auth-server}/oauth/token #请求令牌的地址
     resource:
